@@ -1,0 +1,37 @@
+.row{
+     color: white;
+     margin: 10px 0px 0px 20px;
+     font-size: 2rem;
+}
+.row_posters{
+    cursor: pointer;
+    color: white;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+/* To hide the scroll wheel in each row */
+.row_posters::-webkit-scrollbar{
+    display: none;
+}
+
+.row_poster{
+    max-height: 150px;
+    padding: 10px 20px 20px 0px;
+    object-fit: contain;
+    transition: transform 450ms;
+}
+
+.row_poster:hover{
+    transform: scale(1.08);
+    opacity:1
+}
+
+.OriginalsRow{
+    max-height: 300px;
+}
+
+.OriginalsRow:hover{
+    transform:scale(1.10);
+    opacity: 1;
+}
