@@ -2,7 +2,7 @@
     position:relative;
     color: white;
     object-fit: contain;
-    height: 500px;
+    height: 610px;
 }
 
 .banner_contents{
@@ -43,7 +43,7 @@
     padding-top: 1rem;
     font-size: 0.8rem;
     max-width: 360px;
-    height: 80px;
+    height: 40px;
 }
 
 .fade_out_design{

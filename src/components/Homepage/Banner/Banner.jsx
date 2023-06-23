@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Banner.css";
-import banner from "./713-KpFv1rL._AC_UF894,1000_QL80_.jpg";
+// import banner from "./713-KpFv1rL._AC_UF894,1000_QL80_.jpg";
+import axios from "../../../axios.js";
+import requests from "../../../request";
 
 function Banner() {
+  const [movie, setmovie] = useState([]);
+
+  useEffect(() => {
+    async function generateMovies() {
+      const request = await axios.get(requests.fetchNetflixOriginals);
+      setmovie(
+        request.data.results[
+          Math.floor(Math.random() * request.data.results.length - 1)
+        ]
+      );
+      return request;
+    }
+    generateMovies();
+  }, []);
+  console.log(movie);
   const truncate = (string, n) => {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   };
@@ -12,23 +29,18 @@ function Banner() {
       className="banner"
       style={{
         backgroundSize: "cover",
-        backgroundImage: `url(${banner})`,
+        backgroundImage: `url('https://image.tmdb.org/t/p/original${movie?.backdrop_path}')`,
         backgroundPosition: "center center",
       }}
     >
       <div className="banner_contents">
-        <h1 className="movie_title banner_content">Movie title</h1>
+        <h1 className="movie_title banner_content">
+          {movie?.title || movie?.name || movie?.original_name}
+        </h1>
         <button className="play_button banner_content">Play</button>
         <button className="add_tolist banner_content">Add to List</button>
         <h3 className="movie_description banner_content">
-          {truncate(
-            `this is a test movie_description this is a test movie_description this is a test movie_description this is a test movie_description this is a test movie_description this is a test movie_description this is a test movie_description this is a test movie_description this is a test movie_description this is a test movie_description
-            this is a test movie_description this is a test movie_description this is a test movie_description this is a test movie_description this is a test movie_description this is a test movie_description this is a test movie_description 
-            this is a test movie_description this is a test movie_description this is a test movie_description this is a test movie_description this is a test movie_description this is a test movie_description 
-            this is a test movie_description this is a test movie_description this is a test movie_description this is a test movie_description this is a test movie_description this is a test movie_description 
-            this is a test movie_description`,
-            200
-          )}
+          {truncate(`${movie?.overview}`, 200)}
         </h3>
       </div>
       <div className="fade_out_design"></div>
