@@ -1,0 +1,51 @@
+.Signup_block{
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: grid;
+    padding: 70px;
+    padding-top: 35px;
+    background-color: rgba(0,0,0,0.8);
+    
+}
+.Signup_block > h1 {
+    margin-bottom : 10px
+}
+.Signup_block > input {
+    height: 40px;
+    padding: 10px;
+    width: 72%;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    outline-width: 0;
+    margin-bottom:  5%;
+    border-radius: 5px;
+}
+.Signup_block > button {
+    height: 40px;
+    border-radius: 5px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    color:white;
+    background-color: #E50914;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+.Signup_block > h4{
+    font-weight: 300; 
+}
+.newtonetflix {
+    color: gray;
+}
+.signupnow {
+    font-weight: 500;
+}
+.signupnow:hover{
+    text-decoration: underline;
+    cursor:pointer;
+}
