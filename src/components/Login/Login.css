@@ -1,0 +1,84 @@
+.login_page{
+    position: relative;
+    height: 100%;
+    background: url("./Netflix-logo1.png") center no-repeat;
+    /* background-position-y: center; */
+    /* background-position: center;
+    background-repeat: no-repeat; */
+    background-size: cover;
+}
+
+
+
+.Login_header_components {
+    position: relative;
+    color: white;
+}
+.header_logo{
+    position: fixed;
+    left: 0;
+    padding-left: 20px ;
+    width: 150px;
+    cursor: pointer;
+}
+.signup_button{
+    position: fixed;
+    right: 0;
+    margin: 20px 20px 0px 0px ;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    color: white;
+    background-color: #E50914;  
+}
+
+
+.login_subscription_container{
+    width: 80%;
+    position: absolute;
+    top: 30%;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+    
+    padding: 30px;
+    color: white;
+}
+.login_subscription_heading{
+    font-size: 3.14rem;
+    padding: 10px;
+}
+.login_subscription_description{
+    font-weight: 500;
+    padding: 10px;
+    padding-top: 0;
+}
+.login_form_input{
+    margin-left:10px;
+    padding: 1rem;
+    width: 30%;
+    max-width: 40%;
+    border:none;
+    outline-width: 0;
+}
+.login_form_button{
+    background-color: #E50914;
+    border: 0;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+}
+.login_page_gradient {
+    height: 100vh;
+    z-index: 1;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(to top,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0),
+
+        rgba(0,0,0,0.8)
+
+    );
+}
