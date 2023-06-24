@@ -5,25 +5,33 @@ import Homepage from "./components/Homepage/Homepage";
 import Login from "./components/Login/Login.js";
 import { auth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { login, logout } from "./features/counterSlice";
 
 function App() {
   const [user, setuser] = useState(null);
-
+  const dispatch = useDispatch();
   useEffect(() => {
-    onAuthStateChanged(auth, (u) => {
+    const unsubscribe = onAuthStateChanged(auth, (u) => {
       if (u) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/auth.user
-        const uid = u.uid;
+        dispatch(
+          login({
+            uid: u.uid,
+            email: u.email,
+          })
+        );
         setuser({
-          name: uid,
+          user: u.uid,
         });
-        // ...
       } else {
         // User is signed out
         // ...
+        dispatch(logout);
       }
     });
+    return unsubscribe;
   });
   return (
     <div className="app">
