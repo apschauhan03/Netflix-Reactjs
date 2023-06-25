@@ -5,6 +5,7 @@
     height: 610px;
 }
 
+
 .banner_contents{
     padding: 250px 0px 100px 80px;
 
@@ -46,6 +47,7 @@
     height: 40px;
 }
 
+
 .fade_out_design{
     margin:0;
     height: 7.4rem;
@@ -55,4 +57,21 @@
         rgba(37,37,37,0.61),
         #111
     );
+}
+
+@media only screen and (max-width: 767px) {
+    /* Styles specific to mobile devices */
+    .movie_description {
+      width: 15rem;
+    }
+    .movie_title{
+        font-size: 2.8rem;
+        height: 72px;
+    }
+    .banner{
+        height: 630px;
+    }
+    .banner_contents{
+        padding-left: 40px;
+    }
 }

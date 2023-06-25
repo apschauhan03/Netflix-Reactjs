@@ -83,3 +83,11 @@
 
     );
 }
+@media only screen and (max-width: 767px) {
+    /* Styles specific to mobile devices */
+   .login_subscription_container{
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+   }
+}

@@ -49,3 +49,11 @@
     text-decoration: underline;
     cursor:pointer;
 }
+
+@media only screen and (max-width: 767px) {
+    /* Styles specific to mobile devices */
+   .Signup_block>input{
+    width: 100%;
+}
+
+}
